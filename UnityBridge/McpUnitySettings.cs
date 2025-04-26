@@ -20,14 +20,14 @@ namespace McpUnity.Unity
         private static readonly string SettingsPath = "ProjectSettings/McpUnitySettings.json";
 
         // Server settings
+		[Tooltip("Port that the Node bridge should use to reach this Unity instance")]
         public int Port { get; set; } = 8090;
         
         [Tooltip("IP address or hostname that the Node bridge should use to reach this Unity instance")]
         public string HostAddress { get; set; } = "localhost";
         
         [Tooltip("Whether to automatically start the MCP server when Unity opens")]
-        
-        public string HostAddress { get; set; } = "localhost";
+
         public bool AutoStartServer = true;
         
         [Tooltip("Whether to show info logs in the Unity console")]
