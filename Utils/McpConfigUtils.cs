@@ -26,7 +26,13 @@ namespace McpUnity.Utils
                         { "mcp-unity", new Dictionary<string, object>
                             {
                                 { "command", "node" },
-                                { "args", new[] { Path.Combine(GetServerPath(), "build", "index.js") } }
+                                "args": [
+                                "ABSOLUTE/PATH/TO/mcp-unity/Server/build/index.js"
+                                ],
+                                "env": {
+                                "UNITY_HOST": "YOUR_IP_ADDRESS",
+                                "UNITY_PORT": "YOUR_PORT"
+                            }
                             }
                         }
                     }

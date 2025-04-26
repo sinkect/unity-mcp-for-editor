@@ -136,7 +136,7 @@ Ethernet adapter Ethernet → IPv4 Address
     "mcp-unity": {
       "command": "node",
       "args": [
-        "ABSOLUTE/PATH/TO/mcp-unity/Server/build/index.js"
+        "ABSOLUTE/PATH/TO/Server/build/index.js"
       ],
       "env": {
         "UNITY_HOST": "YOUR_IP_ADDRESS",
