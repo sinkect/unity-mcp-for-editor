@@ -22,7 +22,12 @@ namespace McpUnity.Unity
         // Server settings
         public int Port { get; set; } = 8090;
         
+        [Tooltip("IP address or hostname that the Node bridge should use to reach this Unity instance")]
+        public string HostAddress { get; set; } = "localhost";
+        
         [Tooltip("Whether to automatically start the MCP server when Unity opens")]
+        
+        public string HostAddress { get; set; } = "localhost";
         public bool AutoStartServer = true;
         
         [Tooltip("Whether to show info logs in the Unity console")]
@@ -72,6 +77,12 @@ namespace McpUnity.Unity
                 {
                     Port = port;
                 }
+                // Check for environment variable HOST
+                string envHost = System.Environment.GetEnvironmentVariable("UNITY_HOST");
+                if (!string.IsNullOrEmpty(envHost))
+                {
+                    HostAddress = envHost;
+                }
             }
             catch (Exception ex)
             {
@@ -94,6 +105,7 @@ namespace McpUnity.Unity
                 // Set environment variable PORT for the Node.js process
                 // Note: This will only affect processes started after this point
                 System.Environment.SetEnvironmentVariable("UNITY_PORT", Port.ToString(), System.EnvironmentVariableTarget.User);
+                System.Environment.SetEnvironmentVariable("UNITY_HOST", HostAddress, System.EnvironmentVariableTarget.User);
             }
             catch (Exception ex)
             {
