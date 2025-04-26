@@ -101,7 +101,7 @@ Connection failed: Unknown error
 
 コマンドプロンプト(cmd.exe)を開いて:
 
-  ```
+  ```bash
   ipconfig
   ```
 
@@ -113,7 +113,7 @@ Ethernet adapter Ethernet → IPv4 Address
 
 短く表示する場合:
 
-  ```
+  ```bash
   ipconfig | findstr /R /C:"IPv4 Address"
   ```
 
@@ -122,13 +122,14 @@ Ethernet adapter Ethernet → IPv4 Address
   <details>
   <summary><span style="font-size: 1.1em; font-weight: bold;">macOS</span></summary>
 
-  ```terminal
+  ```bash
   ipconfig getifaddr en0
   ```
 
   </details>
 
 ### 2. mcp.jsonを作成
+
 
 ```json
 {
@@ -146,6 +147,28 @@ Ethernet adapter Ethernet → IPv4 Address
   }
 }
 ```
+## TCPの設定
+
+<details>
+
+<summary><span style="font-size: 1.1em; font-weight: bold;">Windows</span></summary>
+
+```bash
+netsh advfirewall firewall add rule name="MCP-Unity TCP YOUR_PORT" dir=in action=allow protocol=TCP localport=YOUR_PORT```
+```
+
+</details>
+
+<details>
+
+<summary><span style="font-size: 1.1em; font-weight: bold;">macOS</span></summary>
+
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/Unity/Hub/Editor/YOUR_UNITY_VERSION/Unity.app
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/Unity/Hub/Editor/YOUR_UNITY_VERSION/Unity.app
+```
+
+</details>
 
 ## 貢献
 
