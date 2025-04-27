@@ -68,7 +68,7 @@ Code、Cursor、Windsurf）との自動統合を提供します。この機能�
 1. Unityパッケージマネージャーを開く（Window > Package Manager）
 2. 左上隅の"+"ボタンをクリック
 3. "Add package from git URL..."を選択
-4. 入力: `https://github.com/CoderGamester/mcp-unity.git`
+4. 入力: `https://github.com/sinkect/unity-mcp-for-editor.git
 5. "Add"をクリック
 
 ![package manager](https://github.com/user-attachments/assets/a72bfca4-ae52-48e7-a876-e99c701b0497)
@@ -129,6 +129,7 @@ Ethernet adapter Ethernet → IPv4 Address
   </details>
 
 ### 2. mcp.jsonを作成
+
 
 
 ```json
