@@ -121,7 +121,8 @@ Ethernet adapter Ethernet → IPv4 Address
 
   <details>
   <summary><span style="font-size: 1.1em; font-weight: bold;">macOS</span></summary>
-
+  タミナール（terminal)を開いて：
+    
   ```bash
   ipconfig getifaddr en0
   ```
